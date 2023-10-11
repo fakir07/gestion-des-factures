@@ -1,0 +1,112 @@
+ php artisan make:model sections -mcr   craete all model and controler and tdb
+php artisan make:controller  AdminALLController -r  make contrroler 
+php artisan make:model AdminALL
+php artisan make:migration add_roleid_to_users_table --table=users  // add cl to table
+php artisan make:model Fournisseur
+php artisan make:migration create_adminall_table
+php artisan migrate --force
+composer create-project laravel/laravel invoice
+composer require laravel/ui // ath
+ 	    $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('role_user')->references('idrole')->on('role')->onDelete('cascade');
+
+
+
+php artisan make:migration add_telephone_to_fournisseur_table
+php artisan make:migration add_email_to_fournisseur_table
+
+
+
+//cod logout
+ <a class="dropdown-item" href="{{ route('logout') }}"
+                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >
+                             <i class="bx bx-log-out"></i>
+                            Déconnexion
+                        </a>
+                        
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+
+
+cmd  add user admin to cmd 
+
+/:::::::::::::::::::::::::
+PS C:\xampp\htdocs\invoice> php artisan tinker
+Psy Shell v0.10.9 (PHP 8.0.3 — cli) by Justin Hileman
+>>> $user = new App\User;
+PHP Error:  Class "App\User" not found in Psy Shell code on line 1
+>>> $user = new App\User();
+PHP Error:  Class "App\User" not found in Psy Shell code on line 1
+>>> $user = new App/User();
+>>> xls
+PHP Error:  Undefined constant "xls" in Psy Shell code on line 1
+>>> $user = new App/Models/User();
+PHP Fatal error:  Call to undefined function User() in Psy Shell code on line 1
+>>> $users = new App\Models\User();
+=> App\Models\User {#3538}
+>>> $user->name= "aziz fakir";
+=> "aziz fakir"
+>>> $user->email= "aziz@gmail.com";
+=> "aziz@gmail.com"
+>>> $user->password= bcrypt("12345678");
+=> "$2y$10$I1UTInUPepzW./T6lEWm5eqSrcPTLL/s6y41bP3MzyV9NXVx9thiW"
+>>> $user->save();
+=> true
+>>> exit
+Exit:  Goodbye
+PS C:\xampp\htdocs\invoice>
+fwd-i-search: _
+/:::::::::::::::::::::::::
+
+
+Route::get($uri, $callback);
+Route::post($uri, $callback);
+Route::put($uri, $callback);
+Route::patch($uri, $callback);
+Route::delete($uri, $callback);
+Route::options($uri, $callback);
+
+erb        Path                            Action  Route Name
+-------------------------------------------------------------------
+GET         /resource                       index   resource.index
+GET         /resource/create                create  resource.create
+POST        /resource                       store   resource.store
+GET         /resource/{resource}            show    resource.show
+GET         /resource/{resource}/edit       edit    resource.edit
+PUT/PATCH   /resource/{resource}            update  resource.update
+DELETE      /resource/{resource}            destroy resource.destroy
+
+
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+
+//user1
+admin
+webexit123456
+
+//user2
+
+admin_fashion
+2JG&PYpTSu
+
+    protected $table = 'role';
+
+
+ <div class="col-12">
+                                <label for="inputPhoneNo" class="form-label">statue</label>
+                                <div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bx-git-branch' > </i></span>
+                                <select name="servise" id="">
+                                    @foreach ($roles as $role)
+                                    <option value="{{ $role->id }}">{{ $role->idrole }}</option>
+                                    @endforeach
+                                    </select>                                
+                                </div>
+                            </div>
+
+           $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('role_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('role_id')->references('id')->on('role')->onDelete('cascade');
+
